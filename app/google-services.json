@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "182774953575",
+    "firebase_url": "https://cruddatabase2-d2d54.firebaseio.com",
+    "project_id": "cruddatabase2-d2d54",
+    "storage_bucket": "cruddatabase2-d2d54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182774953575:android:547015be6fe16a4a",
+        "android_client_info": {
+          "package_name": "com.example.alankrita.cruddatabase2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182774953575-0fslgirnl36i99hect5tmsuq0n1d54bv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmJLGQBkxhu0SoK1NOT1pGa_ZmIF-Uo5o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

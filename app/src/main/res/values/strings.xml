@@ -1,0 +1,10 @@
+
+<resources>
+    <string name="app_name">CRUDDatabase2</string>
+
+    <array name="units">
+        <item>Gram/Miligram</item>
+        <item>Litre/Mililitre</item>
+        <item>Packet</item>
+    </array>
+</resources>
