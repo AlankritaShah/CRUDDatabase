@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SQLiteDatabase mDatabase, mDatabaseCT;
 
     DatabaseReference databaseItems;
-    private IntentIntegrator qrScan;
+  //  private IntentIntegrator qrScan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,35 +67,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonAddThing).setOnClickListener(this);
         textViewViewThings.setOnClickListener(this);
 
-        qrScan = new IntentIntegrator(this);
+      //  qrScan = new IntentIntegrator(this);
         scanbarcode.setOnClickListener(this);
         customerbutton.setOnClickListener(this);
     }
 
     //Getting the scan results
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (result != null) {
-            //if qrcode has nothing in it
-            if (result.getContents() == null) {
-                Toast.makeText(this, "Result Not Found", Toast.LENGTH_LONG).show();
-            } else {
-                //if qr contains data
-                Log.i("result",result.toString());
-                String barcodenumber = result.getContents();
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+//        if (result != null) {
+//            //if qrcode has nothing in it
+//            if (result.getContents() == null) {
+//                Toast.makeText(this, "Result Not Found", Toast.LENGTH_LONG).show();
+//            } else {
+//                //if qr contains data
+//                Log.i("result",result.toString());
+//                String barcodenumber = result.getContents();
+//
+//                Intent in = new Intent(this, SearchActivity.class);
+//                in.putExtra("barcodenumber",barcodenumber);
+//                startActivity(in);
+//            }
+//        } else {
+//            super.onActivityResult(requestCode, resultCode, data);
+//        }
+//    }
 
-                Intent in = new Intent(this, SearchActivity.class);
-                in.putExtra("barcodenumber",barcodenumber);
-                startActivity(in);
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-
-    private void createCustomerThingTable()
-    {
+    private void createCustomerThingTable() {
         mDatabaseCT.execSQL(
                 "CREATE TABLE IF NOT EXISTS customerthing (\n" +
                         "    customer varchar(200) NOT NULL\n" +
@@ -185,8 +184,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.scanbarcode:
+                startActivity(new Intent(this, ContinousCaptureActivity.class));
 
-                qrScan.initiateScan();
+//                qrScan.setOrientationLocked(false);
+//
+//                qrScan.initiateScan();
                 break;
 
             case R.id.customerbutton:
